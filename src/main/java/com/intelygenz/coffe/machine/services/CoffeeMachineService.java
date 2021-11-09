@@ -1,7 +1,6 @@
 package com.intelygenz.coffe.machine.services;
 
 import com.intelygenz.coffe.machine.dto.InputArguments;
-import picocli.CommandLine;
 import picocli.CommandLine.ParameterException;
 
 public interface CoffeeMachineService {
