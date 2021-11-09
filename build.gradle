@@ -5,11 +5,11 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
-group 'recruitment.java'
+group 'com.intelygenz'
 version '1.0'
 
 sourceCompatibility = 1.8
-mainClassName = "com.intelygenz.coffe.machine.CoffeeMachineApp"
+mainClassName = "com.intelygenz.coffee.machine.CoffeeMachineApp"
 
 repositories {
     mavenCentral()
@@ -58,7 +58,7 @@ dependencies {
     implementation 'org.springframework:spring-context:5.3.12'
     implementation 'info.picocli:picocli:4.6.1'
     implementation 'junit:junit:4.13.2'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 }
-

@@ -1,12 +1,12 @@
-package com.intelygenz.coffe.machine.services;
+package com.intelygenz.coffee.machine.services;
 
-import com.intelygenz.coffe.machine.dto.InputArguments;
-import com.intelygenz.coffe.machine.exception.ValidateDrinkException;
+import com.intelygenz.coffee.machine.dto.InputArguments;
+import com.intelygenz.coffee.machine.exception.ValidateDrinkException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import static com.intelygenz.coffe.machine.utils.Constants.*;
+import static com.intelygenz.coffee.machine.utils.Constants.*;
 
 @Service
 public class ValidationServiceImpl implements ValidationService {
@@ -30,24 +30,26 @@ public class ValidationServiceImpl implements ValidationService {
     }
 
     @Override
-    public void validatePrice(final String drinkType, final Float money) throws ValidateDrinkException {
+    public void validatePrice(final InputArguments input) throws ValidateDrinkException {
         boolean isValid = true;
-        double price = 0.0;
-        switch (drinkType.toUpperCase()) {
+        Float price = 0.0f;
+        Float money = input.getMoney();
+        switch (input.getDrinkType().toUpperCase()) {
             case TEA:
-                price = 0.4;
+                price = 0.4f;
                 isValid = money >= price;
                 break;
             case COFFEE:
-                price = 0.5;
+                price = 0.5f;
                 isValid = money >= price;
                 break;
             case CHOCOLATE:
-                price = 0.6;
+                price = 0.6f;
                 isValid = money >= price;
                 break;
         }
-        if(!isValid) throw new ValidateDrinkException(String.format(DRINK_PRICE_VALIDATE_EXCEPTION, drinkType.toLowerCase(), price));
+        if(!isValid) throw new ValidateDrinkException(String.format(DRINK_PRICE_VALIDATE_EXCEPTION, input.getDrinkType().toLowerCase(), price));
+        input.setMoney(price);
     }
 
 

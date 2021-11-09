@@ -2,7 +2,35 @@
 
 Coffee Machine is an awesome console application that from a few input parameters (drink type, amount of money, number of sugars, extra hot check) is capable to order a drink and show a cool message of the desired drink.
 
-## How it works
+## **Updated**
+###*New feature released*
+
+We have developed a new feature for our coffee machine so that you can see how much money we have earned after each sale. In order to use this new feature, you need a Mongo Database, which is provided in this repository inside *docker-compose.yaml*.
+You just need to run in this directory the next command:
+```
+docker-compose up
+```
+<span style="color:red">Important</span>: You will need to install docker previously on your computer. See https://www.docker.com/get-started
+
+Once you have a MongoDB instance, you can run the application as usual. Example:
+```
+./gradlew run --args="coffee 0.5 1 -e"
+```
+After the execution, you could see the next logs:
+```
+2021-11-09 18:56:28.038  INFO 28418 --- [           main] c.i.coffee.machine.services.OutputImpl   : You have ordered a coffee extra hot with 0 sugar
+2021-11-09 18:56:28.038  INFO 28418 --- [           main] c.i.coffee.machine.services.OutputImpl   : 
+|  Drink  |Money|
+|---------|-----|
+|Tea      | 0.00|
+|Coffee   | 0.50|
+|Chocolate| 0.00|
+```
+
+
+
+
+### How it works
 
 Command
 ```
@@ -57,7 +85,7 @@ You have ordered a coffee with 2 sugars (stick included).
 You have ordered a coffee extra hot with 2 sugars (stick included)    
 ```
 
-## Current status
+### Current status
 
 This application was implemented by a developer who is no longer in the company.
 
@@ -71,7 +99,7 @@ He also implemented a unit test covering all possibilities (`MakeDrinkCommandTes
 As you can see, this class is a bit messy and we need to adapt it to our coding standards
 so that we can create a Merge Request and merge it into master
 
-## What do you have to do?
+### What do you have to do?
 
 We would like to have a reusable, maintainable and testable code, so we want to refactor
 this `MakeDrinkCommand` following these principles:
@@ -97,7 +125,7 @@ Something like the following table would be great:
 |Coffee|25.75|
 |Chocolate|36|
 
-## Project set up
+### Project set up
 
 Install and run the application.
 ```

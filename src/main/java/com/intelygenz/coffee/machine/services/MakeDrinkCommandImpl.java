@@ -1,7 +1,7 @@
-package com.intelygenz.coffe.machine.services;
+package com.intelygenz.coffee.machine.services;
 
-import com.intelygenz.coffe.machine.dto.InputArguments;
-import com.intelygenz.coffe.machine.exception.ValidateDrinkException;
+import com.intelygenz.coffee.machine.dto.InputArguments;
+import com.intelygenz.coffee.machine.exception.ValidateDrinkException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ public class MakeDrinkCommandImpl implements MakeDrinkCommand {
     @Override
     public String makeDrink(InputArguments input) throws ValidateDrinkException {
         validationService.validateDrinkType(input.getDrinkType());
-        validationService.validatePrice(input.getDrinkType(), input.getMoney());
+        validationService.validatePrice(input);
         return validationService.validateSugar(input);
     }
 }

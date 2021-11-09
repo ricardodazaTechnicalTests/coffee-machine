@@ -1,10 +1,9 @@
-package com.intelygenz.coffe.machine.services;
+package com.intelygenz.coffee.machine.services;
 
-import com.intelygenz.coffe.machine.dto.InputArguments;
-import com.intelygenz.coffe.machine.exception.ValidateDrinkException;
+import com.intelygenz.coffee.machine.dto.InputArguments;
+import com.intelygenz.coffee.machine.exception.ValidateDrinkException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 
@@ -23,7 +22,7 @@ public class ValidationServiceTest {
         input.setExtraHot(false);
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
-        validationService.validatePrice(input.getDrinkType(), input.getMoney());
+        validationService.validatePrice(input);
         String resultMessage = validationService.validateSugar(input);
         //then
         assertEquals(true, isValid);
@@ -37,7 +36,7 @@ public class ValidationServiceTest {
         input.setExtraHot(true);
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
-        validationService.validatePrice(input.getDrinkType(), input.getMoney());
+        validationService.validatePrice(input);
         String resultMessage = validationService.validateSugar(input);
         //then
         assertEquals(true, isValid);
@@ -51,7 +50,7 @@ public class ValidationServiceTest {
         input.setExtraHot(false);
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
-        validationService.validatePrice(input.getDrinkType(), input.getMoney());
+        validationService.validatePrice(input);
         String resultMessage = validationService.validateSugar(input);
         //then
         assertEquals(true, isValid);
@@ -66,7 +65,7 @@ public class ValidationServiceTest {
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
         try {
-            validationService.validatePrice(input.getDrinkType(), input.getMoney());
+            validationService.validatePrice(input);
         } catch(ValidateDrinkException ex) {
             //then
             assertEquals(true, isValid);
@@ -81,7 +80,7 @@ public class ValidationServiceTest {
         input.setExtraHot(false);
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
-        validationService.validatePrice(input.getDrinkType(), input.getMoney());
+        validationService.validatePrice(input);
         String resultMessage = validationService.validateSugar(input);
         //then
         assertEquals(true, isValid);
@@ -95,7 +94,7 @@ public class ValidationServiceTest {
         input.setExtraHot(true);
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
-        validationService.validatePrice(input.getDrinkType(), input.getMoney());
+        validationService.validatePrice(input);
         String resultMessage = validationService.validateSugar(input);
         //then
         assertEquals(true, isValid);
@@ -109,7 +108,7 @@ public class ValidationServiceTest {
         input.setExtraHot(false);
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
-        validationService.validatePrice(input.getDrinkType(), input.getMoney());
+        validationService.validatePrice(input);
         String resultMessage = validationService.validateSugar(input);
         //then
         assertEquals(true, isValid);
@@ -124,7 +123,7 @@ public class ValidationServiceTest {
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
         try {
-            validationService.validatePrice(input.getDrinkType(), input.getMoney());
+            validationService.validatePrice(input);
         } catch(ValidateDrinkException ex) {
             //then
             assertEquals(true, isValid);
@@ -139,7 +138,7 @@ public class ValidationServiceTest {
         input.setExtraHot(false);
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
-        validationService.validatePrice(input.getDrinkType(), input.getMoney());
+        validationService.validatePrice(input);
         String resultMessage = validationService.validateSugar(input);
         //then
         assertEquals(true, isValid);
@@ -153,7 +152,7 @@ public class ValidationServiceTest {
         input.setExtraHot(true);
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
-        validationService.validatePrice(input.getDrinkType(), input.getMoney());
+        validationService.validatePrice(input);
         String resultMessage = validationService.validateSugar(input);
         //then
         assertEquals(true, isValid);
@@ -167,7 +166,7 @@ public class ValidationServiceTest {
         input.setExtraHot(false);
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
-        validationService.validatePrice(input.getDrinkType(), input.getMoney());
+        validationService.validatePrice(input);
         String resultMessage = validationService.validateSugar(input);
         //then
         assertEquals(true, isValid);
@@ -182,7 +181,7 @@ public class ValidationServiceTest {
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
         try {
-            validationService.validatePrice(input.getDrinkType(), input.getMoney());
+            validationService.validatePrice(input);
         } catch (ValidateDrinkException ex) {
             //then
             assertEquals(true, isValid);
@@ -213,7 +212,7 @@ public class ValidationServiceTest {
         boolean isValid = false;
         try {
             isValid = validationService.validateDrinkType(input.getDrinkType());
-            validationService.validatePrice(input.getDrinkType(), input.getMoney());
+            validationService.validatePrice(input);
             validationService.validateSugar(input);
         } catch (ValidateDrinkException ex) {
             //then

@@ -1,4 +1,4 @@
-package com.intelygenz.coffe.machine.utils;
+package com.intelygenz.coffee.machine.utils;
 
 public final class Constants {
 

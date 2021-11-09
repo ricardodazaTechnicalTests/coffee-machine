@@ -1,6 +1,6 @@
-package com.intelygenz.coffe.machine.services;
+package com.intelygenz.coffee.machine.services;
 
-import com.intelygenz.coffe.machine.dto.InputArguments;
+import com.intelygenz.coffee.machine.dto.InputArguments;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

@@ -1,4 +1,4 @@
-package com.intelygenz.coffe.machine.dto;
+package com.intelygenz.coffee.machine.dto;
 
 import picocli.CommandLine.Parameters;
 import picocli.CommandLine.Option;
