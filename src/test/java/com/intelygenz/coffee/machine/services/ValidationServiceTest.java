@@ -23,10 +23,9 @@ public class ValidationServiceTest {
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
         validationService.validatePrice(input);
-        String resultMessage = validationService.validateSugar(input);
+        validationService.validateSugar(input);
         //then
         assertEquals(true, isValid);
-        assertEquals("You have ordered a coffee with 1 sugars (stick included)", resultMessage);
     }
 
     @Test
@@ -37,10 +36,9 @@ public class ValidationServiceTest {
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
         validationService.validatePrice(input);
-        String resultMessage = validationService.validateSugar(input);
+        validationService.validateSugar(input);
         //then
         assertEquals(true, isValid);
-        assertEquals("You have ordered a coffee extra hot with 1 sugars (stick included)", resultMessage);
     }
 
     @Test
@@ -51,10 +49,9 @@ public class ValidationServiceTest {
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
         validationService.validatePrice(input);
-        String resultMessage = validationService.validateSugar(input);
+        validationService.validateSugar(input);
         //then
         assertEquals(true, isValid);
-        assertEquals("You have ordered a coffee with 0 sugar", resultMessage);
     }
 
     @Test
@@ -81,10 +78,9 @@ public class ValidationServiceTest {
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
         validationService.validatePrice(input);
-        String resultMessage = validationService.validateSugar(input);
+        validationService.validateSugar(input);
         //then
         assertEquals(true, isValid);
-        assertEquals("You have ordered a tea with 1 sugars (stick included)", resultMessage);
     }
 
     @Test
@@ -95,10 +91,9 @@ public class ValidationServiceTest {
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
         validationService.validatePrice(input);
-        String resultMessage = validationService.validateSugar(input);
+        validationService.validateSugar(input);
         //then
         assertEquals(true, isValid);
-        assertEquals("You have ordered a tea extra hot with 1 sugars (stick included)", resultMessage);
     }
 
     @Test
@@ -109,10 +104,9 @@ public class ValidationServiceTest {
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
         validationService.validatePrice(input);
-        String resultMessage = validationService.validateSugar(input);
+        validationService.validateSugar(input);
         //then
         assertEquals(true, isValid);
-        assertEquals("You have ordered a tea with 0 sugar", resultMessage);
     }
 
     @Test
@@ -139,10 +133,9 @@ public class ValidationServiceTest {
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
         validationService.validatePrice(input);
-        String resultMessage = validationService.validateSugar(input);
+        validationService.validateSugar(input);
         //then
         assertEquals(true, isValid);
-        assertEquals("You have ordered a chocolate with 1 sugars (stick included)", resultMessage);
     }
 
     @Test
@@ -153,10 +146,9 @@ public class ValidationServiceTest {
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
         validationService.validatePrice(input);
-        String resultMessage = validationService.validateSugar(input);
+        validationService.validateSugar(input);
         //then
         assertEquals(true, isValid);
-        assertEquals("You have ordered a chocolate extra hot with 1 sugars (stick included)", resultMessage);
     }
 
     @Test
@@ -167,10 +159,9 @@ public class ValidationServiceTest {
         //when
         boolean isValid = validationService.validateDrinkType(input.getDrinkType());
         validationService.validatePrice(input);
-        String resultMessage = validationService.validateSugar(input);
+        validationService.validateSugar(input);
         //then
         assertEquals(true, isValid);
-        assertEquals("You have ordered a chocolate with 0 sugar", resultMessage);
     }
 
     @Test

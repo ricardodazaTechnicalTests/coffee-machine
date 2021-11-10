@@ -7,5 +7,5 @@ public interface ValidationService {
 
     boolean validateDrinkType(final String drinkType) throws ValidateDrinkException;
     void validatePrice(final InputArguments input) throws ValidateDrinkException;
-    String validateSugar(final InputArguments input) throws ValidateDrinkException;
+    void validateSugar(final InputArguments input) throws ValidateDrinkException;
 }

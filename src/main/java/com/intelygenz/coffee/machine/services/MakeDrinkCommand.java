@@ -6,4 +6,6 @@ import com.intelygenz.coffee.machine.exception.ValidateDrinkException;
 public interface MakeDrinkCommand {
 
   String makeDrink(InputArguments input) throws ValidateDrinkException;
+
+  String buildResultMessage(InputArguments input);
 }

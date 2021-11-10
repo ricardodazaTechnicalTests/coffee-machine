@@ -48,28 +48,17 @@ public class ValidationServiceImpl implements ValidationService {
                 isValid = money >= price;
                 break;
         }
-        if(!isValid) throw new ValidateDrinkException(String.format(DRINK_PRICE_VALIDATE_EXCEPTION, input.getDrinkType().toLowerCase(), price));
+        if (!isValid)
+            throw new ValidateDrinkException(String.format(DRINK_PRICE_VALIDATE_EXCEPTION, input.getDrinkType().toLowerCase(), price));
         input.setMoney(price);
     }
 
 
     @Override
-    public String validateSugar(InputArguments input) throws ValidateDrinkException {
-        String message = "";
+    public void validateSugar(InputArguments input) throws ValidateDrinkException {
         Integer sugarsNo = input.getSugar();
-        if (validNumberOfSugar(sugarsNo)) {
-            message = String.format(ORDERED,
-                    input.getDrinkType(),
-                    input.isExtraHot() ? EXTRA_HOT : EMPTY,
-                    sugarsNo,
-                    sugarsNo > 0 ? SUGARS_STICK_INCLUDED : SUGAR);
-        } else {
+        if (!(sugarsNo >= 0 && sugarsNo <= 2)) {
             throw new ValidateDrinkException(NUMBER_OF_SUGARS_VALIDATE_EXCEPTION);
         }
-        return message;
-    }
-
-    private boolean validNumberOfSugar(final Integer sugarsNo) {
-        return sugarsNo >= 0 && sugarsNo <= 2;
     }
 }
